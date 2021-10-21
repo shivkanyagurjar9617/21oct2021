@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+             body{
+               background-color: #1D1D1D;
+               color:#fff;
+             }
+            div::after{
+                /*step1*/
+                content: "s";
+                display: block;
+                width: 10px;
+                height: 10px;
+                background-color: red;
+                transition: all 0.2s linear;
+            }
+            div:hover::after{
+                /*step2*/
+                width:100px;
+            }
+            input ~ span::after{
+                /*step2*/
+                content: "";
+                display: block;
+                width: 0px;
+                height: 2px;
+                background-color: #08FDD8;
+                transition: all 0.3s ease-out;
+            }
+            input:focus ~ span::after{
+                /* STEP 2 */
+                width: 170px;
+            }
+
+            
+        </style>
+    </head>
+    <body>
+        <div>OKLABS</div>
+        <form>
+            <input type="text">
+            <span></span>
+        </form>
+        
+    </body>
+</html>
